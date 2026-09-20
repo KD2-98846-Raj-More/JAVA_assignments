@@ -1,0 +1,66 @@
+/*3. Display food menu to user. User will select items from menu along with the 
+quantity. (eg 1. Dosa 2. Samosa 3. Idli ... 10 . Generate Bill ) Assign fixed 
+prices to food items(hard code the prices)  When user enters 'Generate Bill' 
+option , display total bill & exit.*/
+
+package assignment1;
+import java.util.Scanner;
+public class Question_3 {
+   public static void main(String[] args)
+   {
+	   Scanner sc = new Scanner(System.in);
+	   int choice,quantity;
+	   double total = 0;
+	   
+	   while(true)
+	   {
+		   System.out.println("\n----FOOD MENU----");
+		   System.out.println("1.Dosa   -50 rs");
+		   System.out.println("2.Samosa -20 rs");
+		   System.out.println("3.Idli   -30 rs");
+		   System.out.println("4.Vada   -25 rs");
+		   System.out.println("10.Generate Bill");
+		   
+		   System.out.print("Enter your choice");
+		   choice = sc.nextInt();
+		   
+		   if(choice == 10)
+		   {
+			   break;
+		   }
+		   
+		   System.out.print("Enter quantity:");
+		   quantity = sc.nextInt();
+		   
+		   switch(choice)
+		   {
+		   
+		   case 1:
+			   total = total + 50* quantity;
+			   break;
+			   
+		   case 2:
+			   total = total + 20* quantity;
+			   break;
+			   
+		   case 3:
+			   total = total + 30* quantity;
+			   break;
+
+		   case 4:
+			   total = total + 25* quantity;
+			   break;
+			   
+			   default:
+				   System.out.println("Invalid choice");
+
+			   
+		   }
+		   
+		    System.out.println("-------------------");
+	        System.out.println("Total Bill = Rs." + total);
+	        System.out.println("-------------------");
+	        sc.close();
+	   }
+   }
+}
